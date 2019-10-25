@@ -37,3 +37,6 @@ git pull origin master
 Git Clone : Clone Remote Repository
 คำสั่ง
 git clone https://github.com/Garuka/Test-Git.git
+
+
+- Update file to test github
