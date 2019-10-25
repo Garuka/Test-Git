@@ -94,3 +94,9 @@ Git Diff : เปรียบเทียบ Working Directory กับ branch 
 git diff commit_id
 git diff develop
 
+Git Ignore : คือ การกำหนดให้ Git รู้ว่าไฟล์ไหนหรือโฟลเดอร์ภายใน Working Directory ที่ไม่ต้องการเก็บภายใน Repository
+วิธีการใช้ Git Ignore 
+1.สร้างไหล์ .gitignore
+2.ใส่ชื่อโฟล์เดอร์หรือไฟล์ภายใน Working directory ในไฟล์ .gitignore
+3.ทำการ Add และ commit ไฟล์ .gitignore เข้า Git
+
