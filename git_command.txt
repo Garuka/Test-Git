@@ -80,4 +80,17 @@ git reset --hard commit_ID          #ย้อนกลับไปที่ com
 git reset --soft commit_id          #ย้อนกลับไปที่ commit id | SOFT
 git reset --mixed develop           #ย้อนกลับไปที่ branch develop | MIXED
 
+Git Merge : รวม branch หรือ Commit ทั้งสองเข้าด้วยกัน
+แบบที่ 1. คือการ merge แล้ว commit ให้กลายเป็นอันใหม่เลย โดยที่จะไม่สนในไฟล์ที่เข้ามาเพิ่มเลย
+แบบที่ 2. คือการ merge โดยเอากิ่งที่ Commit เข้ามารวมด้วย
+คำสั่ง
+#รวม branch master กับ branch feature แบบ no fast forward
+git merge --no-ff feature
+#รวม branch master กับ branch feature แบบ fast forward
+git merge feature
+
+Git Diff : เปรียบเทียบ Working Directory กับ branch หรือ commit ID ที่ระบบ
+คำสั่ง
+git diff commit_id
+git diff develop
 
