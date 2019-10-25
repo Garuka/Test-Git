@@ -1,0 +1,39 @@
+Remote Repository
+การทำ Remote Repository จะทำให้สถานะใน Git เพิ่มขึ้นมาอีก 1 สถานะ
+สถานะนี้สามารถนำไปเก็บไว้บน Repository บน Server ได้
+รวมถึงการ Push ข้อมูลจาก Server มาที่เครื่องเราได้ และสามารถ marge กับ Code ของเราในปัจจุบันและพัฒนาต่อได้
+คำสั่ง
+git remote add origin <URL>
+git remote add origin https://github.com/Garuka/Test-Git.git        #เพิ่ม Remote Repository ชื่อ origin
+git remote -v           #แสดง Remote Repository
+
+git Push : การส่งไฟล์ Local Repository ที่เปลี่ยนแปลงขี้นไปบน Remote Repository
+คำสั่ง
+#ส่งการเปลี่ยนแปลง branch master ไปยัง remote ที่ชื่อ origin
+git push origig master
+#ส่งการเปลี่ยนแปลง branch develop ไปยัง remote ที่ชื่อ origin
+git push origin develop
+#ส่งการเปลี่ยนแปลงลบ branch develop ไปยัง Remote ที่ชื่อ origin
+git push --delete origin develop
+
+
+Git Fetct : ดึงไฟล์ล่าสุดบน Remote Repository มายัง Local Repository เพือรอ marge
+คำสั่ง
+#รับการเปลี่ยนแปลงทุก branch จาก remote Repository
+git fetch --all
+#รับการเปลี่ยนแปลง branch master จาก remote repository ที่ชื่อ origin
+git fetch origin master
+#รวมการเปลี่ยนแปลงบน Remote Repository มายัง Local Repository
+git merge
+git merge origin/master
+
+
+Git Pull : (fetch + merge)
+คำสั่ง
+git pull <remote> <branch>
+git pull origin master 
+
+
+Git Clone : Clone Remote Repository
+คำสั่ง
+git clone https://github.com/Garuka/Test-Git.git
