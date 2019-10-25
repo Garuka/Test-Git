@@ -1,0 +1,57 @@
+Git Confit : แสดงค่า Config ของ Git
+คำสั่ง
+git config --global --list  #แสดงคุณสมบัติ ของ Git ทั้งหมด global
+git config --list           #แสดงคุณสมบัติ Git เฉพาะ Repository นั้น
+
+Git Config : ตั่งค่า Config ของ Git
+คำสั่ง
+git config --global user.name "Thitipan Kijcharounpol"      #กำหนดชื่อผู้ใช้
+git config --global user.email "Thitipan991@gmail.com"      #กำหนดอีเมล์ของผุ้ใช้
+git config --global --list                                  #ตรวจสอบอีกครั้งหลังจากกำหนดค่าเสร็จแล้ว
+
+Git Init : สร้าง Git Repository
+คำสั่ง
+git init
+
+Git Status : ตรวจสอบสถานะไฟล์ใน Git
+คำสั่ง
+git Status
+อธิบาย 
+Untracked : สถานะไฟล์ยังไม่ได้ถูกเก็บไว้ในระบบ Git
+Working Directory : สถานะที่มีการเปลี่ยนแปลงหรือแก้ไขไฟล์
+Staged : สถานถเตรียม Commit เพื่อยืนยันการเปลี่ยนแปลงก่อนเก็บลงในสถานะ Local Repository
+Local repository :  สถานะเก็บบันทึกข้อมูลไฟล์ที่เปลี่ยนแปลงลงใน Git Repository แบบ Local (ที่เครื่องตัวเอง)
+Remote Repository : สถานะเก็บบันทึกข้อมูลไฟล์ที่เปลี่ยนแปลงลงใน Git Repository แบบ Hosting (ที่เครื่อง Server)
+กราฟการทำงาน
+1. ถ้าสร้างไฟล์ขึ้นมาใหม่จะอยู่ในสถานนะ Untracked ($touch ชื่อไฟล์)
+2. เมื่อเราสั่งด้วยคำสั่ง add จะเข้าสู่สถานะ Working Directory เพิ่อเตรียมพร้อม Commit ในสถานะ Staged ไปเก็บไว้ใน Repository (ในเครื่องเรา)
+3.เมือเราต้องการที่จะเข้าไปใน Git จริงๆ แล้วให้ใช้คำสั่ง git commit -m "ข้อความที่ต้องการจะใส่เพื่อเอาไว้ดู"
+4. แต่ถ้าเราเกิดเปลี่ยนใจไม่อยากจะเก็บแล้ว อยากจะย้อนกลับให้ไฟล์นี้ออกจากระบบ Git ให้ใช้คำสั่ง git reset HEAD ชื่อไฟล์ มันก็จะถูกสั่งจาก Staged 
+กลับไปเป็นสถานะ Untracked เหมือนเดิม ต้องใช้ก่อนที่จะ ใช้คำสั่ง git commit -m "้อความที่ต้องการจะใส่เพื่อเอาไว้ดู"
+5. แต่ถ้าอยากจะไม่ให้เก็บหรืออยากจะลบไฟล์ๆนี้ใน Git Repository(ในเครื่องเรา) แล้วให้ใช้คำสั่ง git rm --cached ชื่อไฟล์  ไฟล์นั้นก็จะกลับเข้าสู่สถานะ Untracked เหมือนเดิม
+
+Git Add : เพิ่มไฟล์ใหม่หรือไฟล์ที่แก้ไขไปสู่ Staged
+คำสั่ง
+git add <ชื่อไฟล์>     #เพิ่มไฟล์ เข้าไปสู่สถานะ Staged
+git add .           # ใช้ในกรณีที่มีหลายๆ ไฟล์และต้องการเพิ่มเข้าไปทั้งหมด
+
+Git Commit : เก็บไฟล์ Staged เข้าไปใน Local Repository
+คำสั่ง
+git commit -m "Message"     #ยืนยันการเปลี่ยนแปลงพร้อมข้อความ
+
+Git Log : แสดงประวัติของ Repository
+คำสั่ง
+git log
+git log --online
+git log --online --decorate
+git log --online --decorate --graph
+git log --stat                              # Diff from log
+git log --grep="Message"                    # Log by Message
+git log --after="2019-10-25"                # log in date
+git log --before="2019-10-25"               # log in date
+git log --author=Thitipan                   # log by user
+
+Git Clean : แสดงและลบไฟล์ที่อยู่สถานะ Untracked
+คำสั่ง
+git clean -n        # แสดง Source Code ที่อยู่ในสถานะ Untracked
+git clean -df       # ลบ Source Code ที่อยู่ในสถานะ Untracked
