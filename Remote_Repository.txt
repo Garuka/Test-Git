@@ -41,3 +41,12 @@ git clone https://github.com/Garuka/Test-Git.git
 
 - Update file to test github
 - Update file to local from github
+
+Git conflict : เกิดการแก้ไขไฟล์ชนกัน
+#1 เมือ add และ commit ไฟล์แล้ว ไม่สามารถ push ขึ้น Remote repository ได้ (อาจเกิดจากมีการอัพไฟล์ชนกัน)
+อันดับแรกให้เรา pull ลงมาก่อน จะเห็นได้ว่า github จะเช็คให้เราว่าไฟล์เรากับบน Server ต่างกันยังไง
+git pull
+#2 ทำการแก้ไขไฟล์ที่มีการชนกันแล้ว add , commit , push เข้าไป Remote repository ใหม่อีกครั้ง
+git add .
+git comit - m "updated error conflict"
+git push origin master
