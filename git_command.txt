@@ -55,3 +55,29 @@ Git Clean : แสดงและลบไฟล์ที่อยู่สถ�
 คำสั่ง
 git clean -n        # แสดง Source Code ที่อยู่ในสถานะ Untracked
 git clean -df       # ลบ Source Code ที่อยู่ในสถานะ Untracked
+
+Git Branch : เพิ่ม ลบ แสดงกิ่งของ Repository
+คำสั่ง
+git branch
+git branch --all
+git branch develop                  # สร้าง branch ชื่อ develop
+git branch --delete develop         # ลบ branch ชื่อ develop
+
+Git Checkout : สลับการทำงานระหว่าง Branch หรือ Commit ID
+คำสั่ง
+#ย้ายการทำงานไปที่ branch หรือ commit_id ที่ระบุ
+git checkout <branch name หรือ commit id>
+
+#สร้าง branch ชื่อ test และทำการสลับการทำงานที่ branch นี้
+git checkout -b test
+
+#เลือกแค่บางไฟล์จาก branch อื่น เข้ามา Merge กับ Working Directory ที่กำลังทำงาน
+git checkout <branch name> <file name>
+
+Git Reset : ย้อนกลับไปก่อนหน้าด้วย Branch หรือ Commit ID
+คำสั่ง
+git reset --hard commit_ID          #ย้อนกลับไปที่ commit id | HARD
+git reset --soft commit_id          #ย้อนกลับไปที่ commit id | SOFT
+git reset --mixed develop           #ย้อนกลับไปที่ branch develop | MIXED
+
+
