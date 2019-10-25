@@ -40,3 +40,4 @@ git clone https://github.com/Garuka/Test-Git.git
 
 
 - Update file to test github
+- Update file to local from github
